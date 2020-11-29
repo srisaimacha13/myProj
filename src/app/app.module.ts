@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { QuillModule } from 'ngx-quill'
 
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -16,6 +17,7 @@ import { AntdModule } from './antd.module';
 
 import { NavComponent } from './components/nav/nav.component';
 import { EmailEditorComponent } from './components/email-editor/email-editor.component';
+import { RichTextComponent } from './components/rich-text/rich-text.component';
 
 registerLocaleData(en);
 
@@ -23,7 +25,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     NavComponent,
-    EmailEditorComponent
+    EmailEditorComponent,
+    RichTextComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NzButtonModule,
-    AntdModule
+    AntdModule,
+    QuillModule.forRoot()
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
